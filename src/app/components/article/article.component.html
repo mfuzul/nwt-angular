@@ -1,0 +1,53 @@
+<div class="article">
+  <div class="article-head">
+    <span class="article-title">
+      {{ cocktail.strDrink }}
+    </span>
+    <span class="article-review">
+      {{ rating }} of 5 (based on {{ reviews.length }} reviews)
+    </span>
+  </div>
+  <div class="row article-body">
+    <div class="col-5">
+      <img class="article-img" src="{{ cocktail.strDrinkThumb }}" alt="{{ cocktail.strDrink }}" />
+    </div>
+    <div class="col-7">
+      <div>
+      <div class="instructions">
+        <h4 class="instructions-title">Instructions</h4>
+        <span class="instructions-body">{{ cocktail.strInstructions.trim() }}</span>
+      </div>
+      <div class="cocktail-info">
+        <span class="label">{{ cocktail.strCategory }}</span>
+        <span class="label">{{ cocktail.strAlcoholic }}</span>
+        <span class="label">{{ cocktail.strGlass }}</span>
+      </div>
+      <div class="ingredients">
+        <h5 class="ingredients-title">Ingredients</h5>
+        <span class="ingredient-wrapper" *ngFor="let number of ingredients">
+          <span class="ingredient" *ngIf="showIngredient(cocktail, number)">
+            <i class="fa fa-glass"></i>
+            <span class="measure">{{ cocktail['strMeasure' + number].trim() }}</span>&nbsp;<span class="ingredient-name">{{ cocktail['strIngredient' + number].trim() }}</span>
+          </span>
+        </span>
+      </div>
+      </div>
+      <div class="controls">
+        <span class="favorite"
+          (click)="addToFavorites(cocktail)"
+        >
+          <i [ngClass]="{
+                'fa fa-2x': true,
+                'fa-heart': favorite,
+                'fa-heart-o': !favorite
+            }"
+          ></i>
+          <span>Add to favorites</span>
+        </span>
+        <app-star-rating
+          [count]="5"
+        ></app-star-rating>
+      </div>
+    </div>
+  </div>
+</div>

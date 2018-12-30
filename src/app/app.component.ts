@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'domaci-angular';
+  titleFirstPart = 'Cocktail';
+  titleSecondPart = 'Depot';
 }

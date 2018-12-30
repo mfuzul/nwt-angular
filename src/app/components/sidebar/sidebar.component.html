@@ -1,0 +1,19 @@
+<div class="form-group">
+  <input type="text" class="form-control" id="search" placeholder="Search" />
+  <span>
+      <i class="fa fa-search"></i>
+  </span>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fa fa-heart-o"></i> Favorites</h5>
+    <h6 class="card-subtitles">Your favorite cocktails</h6>
+    <span class="text-muted" *ngIf="!favorites.length">
+      You have no favorite cocktails at the moment.
+    </span>
+    <span class="favorite" *ngFor="let favorite of favorites">
+      <app-article-favorite [cocktail]="favorite"></app-article-favorite>
+    </span>
+  </div>
+</div>

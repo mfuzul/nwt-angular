@@ -1,0 +1,8 @@
+<span class="rating">
+  <i class="fa fa-star-o fa-2x"
+     *ngFor="let star of stars; let i = index"
+     [attr.data-star-id]="i"
+     (mouseenter)="starOnMouse($event, 'enter')"
+     (mouseleave)="starOnMouse($event, 'leave')"
+  ></i>
+</span>
