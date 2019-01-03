@@ -26,7 +26,7 @@ export class ArticleListComponent implements OnInit {
                 for (let i = 0; i <= Math.round(5 * Math.random()); i++) {
                     this.reviewService.add(new Review({
                         'cocktailId': cocktail.idDrink,
-                        'rating': Math.round(5 * Math.random() + 1),
+                        'rating': Math.round(5 * Math.random()),
                         'user': 'admin',
                         'message': 'Lorem ipsum dolor sit amet',
                     }));

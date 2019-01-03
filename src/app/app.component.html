@@ -1,13 +1,12 @@
 <div class="container-fluid">
   <app-header [titleFirstPart]="titleFirstPart" [titleSecondPart]="titleSecondPart"></app-header>
   <div class="row pt-2">
-      <div class="col-lg-3 order-lg-2">
+      <div id="sidebar" class="col-lg-3 order-lg-2">
           <app-sidebar></app-sidebar>
       </div>
       <div class="col-lg-7 offset-lg-1 order-lg-1">
         <router-outlet></router-outlet>
       </div>
   </div>
-
   <app-footer></app-footer>
 </div>
